@@ -40,7 +40,9 @@ function AccountContainer() {
       <Search setSearch={setSearch}/>
       <AddTransactionForm postTransaction={postTransaction}/>
       <Sort onSort={onSort}/>
-      <TransactionsList transactions={transactions} />
+      <TransactionsList transactions={transactions.filter(t => 
+  t.description.toLowerCase().includes(search.toLowerCase())
+)} />
     </div>
   );
 }
